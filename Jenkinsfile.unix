@@ -24,7 +24,7 @@ pipeline {
     environment {
     SAG_HOME="/SAG/IS5555"
     SAG_CI_HOME="/SAG/sagdevops-ci-assets"
-    autoResolve=${params.autoResolve}
+    autoResolve=params.autoResolve
   }
 
     stages {
