@@ -13,7 +13,6 @@
         <property name="rulesProjectsDir" location="${rulesProjects}"/>
         <property name="umProjectsDir" location="${umExport}"/>
 
-	<property name="autoResolve" value="${autoResolve}"/>
 
         <property name="buildOutputDir" value="${workspace.dir}/target/${projectName}/build"/>
         <property name="repositoryName" value="${projectName}Repo"/>
