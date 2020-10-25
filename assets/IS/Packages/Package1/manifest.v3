@@ -10,4 +10,11 @@
   <null name="requires"/>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
+  <value name="name">Package1</value>
+  <value name="build">1.0.214</value>
+  <null name="description"/>
+  <value name="time">2020-10-25 05:49:39 GMT</value>
+  <value name="jvm_version">1.8.0_222</value>
+  <value name="publisher">e626d304dd7a</value>
+  <value name="patch_nums"></value>
 </Values>
