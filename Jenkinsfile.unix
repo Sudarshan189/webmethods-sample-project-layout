@@ -31,9 +31,11 @@ pipeline {
 
     stages {
 	stage('Checkout: SCM') {
+	steps {
 		dir('IS5555') {
 			checkout scm
 		}
+	}
 	}
         stage('Build'){
             steps {
