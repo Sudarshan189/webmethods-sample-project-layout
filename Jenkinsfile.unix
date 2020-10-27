@@ -30,17 +30,17 @@ pipeline {
   }
 
     stages {
-        stage('Build "${env.JOB_NAME}"'){
+        stage("Build ${env.JOB_NAME}"){
             steps {
 		    sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} build"
             }
         }
-        stage('Deploy ${env.JOB_NAME}') {
+        stage("Deploy ${env.JOB_NAME}") {
             steps {
 		sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} deploy"
             }
         }
- 	stage('Test ${env.JOB_NAME}') {
+ 	stage("Test ${env.JOB_NAME}") {
             steps {
 		sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} test"
 		junit 'report/'
