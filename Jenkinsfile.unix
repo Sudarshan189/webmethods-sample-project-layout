@@ -26,21 +26,23 @@ pipeline {
     SAG_CI_HOME="/SAG/sagdevops-ci-assets"
     autoResolve="${params.autoResolve}"
     packageName="${params.package}"
-    JOB_NAME="${params.package}"
+    JOB_NAME="${params.package}" 
+    buildName="Build ${params.package}"
+    deployName="Deploy ${params.package}"
   }
 
     stages {
-        stage("Build ${env.JOB_NAME}"){
+        stage(${env.buildName}){
             steps {
 		    sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} build"
             }
         }
-        stage("Deploy ${env.JOB_NAME}") {
+        stage(${env.deployName}) {
             steps {
 		sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} deploy"
             }
         }
- 	stage("Test ${env.JOB_NAME}") {
+ 	stage('Test') {
             steps {
 		sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} test"
 		junit 'report/'
