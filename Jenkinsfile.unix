@@ -27,17 +27,15 @@ pipeline {
     autoResolve="${params.autoResolve}"
     packageName="${params.package}"
     JOB_NAME="${params.package}" 
-    buildName="Build ${params.package}"
-    deployName="Deploy ${params.package}"
   }
 
     stages {
-        stage(${env.buildName}){
+        stage('Build'){
             steps {
 		    sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} build"
             }
         }
-        stage(${env.deployName}) {
+        stage('Deploy') {
             steps {
 		sh "ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} -DautoResolve=${env.autoResolve} deploy"
             }
