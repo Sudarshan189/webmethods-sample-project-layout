@@ -8,8 +8,8 @@
   <null name="shutdown_services"/>
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
-	      <value name="Package1">*.*</value>
+    <value name="Package1">*.*</value>
   </record>
-  <null name="listACL"/>
+  <value name="listACL">Default</value>
   <value name="webappLoad">yes</value>
 </Values>
