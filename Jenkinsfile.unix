@@ -25,6 +25,8 @@ pipeline {
     SAG_HOME="/SAG/IS5555"
     SAG_CI_HOME="/SAG/sagdevops-ci-assets"
     autoResolve="${params.autoResolve}"
+    packageName="${params.package}"
+    JOB_NAME="${params.package}"
   }
 
     stages {
