@@ -4,7 +4,6 @@
 	<property file="project.properties"/>
 
         <property name="workspace.dir" location="."/>
-
         <!-- remap the VCS structure defined in project.properties to have absolute paths -->
         <property name="isProjectsDir" location="${isPackages}"/>
         <property name="isTestDir" location="${isTests}"/>
